@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sample BBS</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <meta name="description" content="やったー！ Sqale にアプリケーションをデプロイできたよ！ http://sqale.jp/" />
+    <meta property="og:title" content="Sample BBS" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="やったー！ Sqale にアプリケーションをデプロイできたよ！ http://sqale.jp/" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        <%= link_to root_path do %>
+          Sample BBS
+        <% end %>
+      </h1>
+    </header>
+    <article>
+      <% if notice %>
+      <div class="notice info">
+        <p>
+          <%= notice %>
+        </p>
+      </div>
+      <% end %>
+      <%= yield %>
+    </article>
+    <footer>
+      <a href="http://sqale.jp/" id="sqale" target="_blank">
+        Hosted by <span>Sqale</span>
+      </a>
+      <ul id="social-buttons">
+        <li class="twitter">
+          <a href="https://twitter.com/share" class="twitter-share-button" data-text="やったー！ Sqale にアプリケーションをデプロイできたよ！ http://sqale.jp/" data-via="sqalejp" data-lang="ja" data-count="none">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </li>
+        <li class="facebook">
+          <div class="fb-like" data-width="110" data-send="false" data-show-faces="false" data-layout="button_count"></div>
+          <div id="fb-root"></div>
+          <script>
+            (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s);
+              js.id = id;
+              js.src = "http://connect.facebook.net/ja_JP/all.js#xfbml=1";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+          </script>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

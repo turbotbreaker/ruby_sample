@@ -1,0 +1,33 @@
+<%= form_for(@comment) do |f| %>
+<% if @comment.errors.any? %>
+<div class="notice error">
+  <h2>
+    Error!
+  </h2>
+  <ul>
+  <% @comment.errors.full_messages.each do |msg| %>
+    <li>
+      <%= msg %>
+    </li>
+  <% end %>
+  </ul>
+</div>
+<% end %>
+<div id="form">
+  <div class="field">
+    <%= f.label :name, class: 'label', for: 'form-name' %>
+    <%= f.text_field :name, id: 'form-name', class: 'text' %>
+  </div>
+  <div class="field">
+    <%= f.label :title, class: 'label', for: 'form-title' %>
+    <%= f.text_field :title, id: 'form-title', class: 'text' %>
+  </div>
+  <div class="field">
+    <%= f.label :body, class: 'label', for: 'form-body' %>
+    <%= f.text_area :body, id: 'form-body', class: 'textarea' %>
+  </div>
+  <%= f.button type: 'submit', id: 'form-submit', class: 'button blue' do %>
+    Submit
+  <% end %>
+</div>
+<% end %>
