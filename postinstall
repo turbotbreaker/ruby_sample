@@ -2,4 +2,4 @@
 
 set -e
 
-bundle install --path /home/sqale/current/vendor/bundle
+(cd /home/sqale/current && bundle install --path vendor/bundle) > /tmp/bundle_log.txt
